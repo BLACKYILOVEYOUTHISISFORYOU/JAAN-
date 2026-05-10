@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Jaan 😇, My Love, My Wifey..</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400;1,600&family=Great+Vibes&family=Quicksand:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+  :root {
+    --blush: #f8c2d1;
+    --cream: #fffcf9;
+    --soft-brown: #b57a60;
+    --beige: #fef6f0;
+    --peach: #ffdab9;
+    --rose-gold: #e8a598;
+    --text-dark: #4a332d;
+    --text-light: #8c6b61;
+    --primary-red: #d63031;
+    --gold: #d4af37;
+    --neon-pink: #ff2a5f;
+    
+    --glass-bg: rgba(255, 255, 255, 0.4);
+    --glass-blur: blur(20px);
+    --glass-border: rgba(255, 255, 255, 0.6);
+    --glass-shadow: 0 10px 40px rgba(255, 182, 193, 0.4);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  /* Night sky background for login */
+  body {
+    background: #0a0305;
+    background-image: radial-gradient(circle at center, #2c0e1a 0%, #0a0305 100%);
+    color: #fff;
+    font-family: 'Quicksand', sans-serif;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    transition: background 2.5s ease;
+  }
+
+  /* Bright romantic background after login */
+  body.unboxed {
+    background: linear-gradient(-45deg, #fff5f7, #ffe4eb, #fef6f0, #f8c2d1);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    color: var(--text-dark);
+  }
+
+  @keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: rgba(255,255,255,0.2); }
+  ::-webkit-scrollbar-thumb { background: var(--rose-gold); border-radius: 10px; }
+
+  /* =========================================
+     LOGIN SCREEN (GLOWING LOCK)
+  ========================================= */
+  #auth-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 1.5s ease;
+  }
+
+  .stars-bg {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: transparent;
+    opacity: 0.6;
+  }
+
+  .heart-lock-container {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    animation: floatLock 4s ease-in-out infinite;
+  }
+
+  @keyframes floatLock {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+  }
+
+  .glowing-heart {
+    font-size: 8rem;
+    color: rgba(255, 42, 95, 0.15);
+    position: absolute;
+    text-shadow: 0 0 40px var(--neon-pink);
+    animation: pulseHeart 2s infinite;
+  }
+
+  @keyframes pulseHeart {
+    0%, 100% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.1); opacity: 1; text-shadow: 0 0 60px var(--neon-pink); }
+  }
+
+  .the-lock {
+    font-size: 3.5rem;
+    color: #fff;
+    z-index: 2;
+    text-shadow: 0 0 15px rgba(255,255,255,0.8);
+    transition: all 0.5s ease;
+  }
+
+  .pass-container {
+    text-align: center;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 3rem 4rem;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    transition: transform 0.5s, opacity 0.5s;
+  }
+
+  .pass-container h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 4rem;
+    color: #fff;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0 15px var(--neon-pink);
+  }
+
+  .pass-container input {
+    background: rgba(0, 0, 0, 0.3);
+    border: 2px solid rgba(255,255,255,0.3);
+    color: white;
+    font-size: 1.2rem;
+    padding: 15px 25px;
+    border-radius: 50px;
+    text-align: center;
+    outline: none;
+    font-family: 'Quicksand', sans-serif;
+    width: 300px;
+    margin-bottom: 1.5rem;
+    transition: 0.3s;
+    letter-spacing: 2px;
+  }
+
+  .pass-container input:focus {
+    border-color: var(--neon-pink);
+    box-shadow: 0 0 15px rgba(255, 42, 95, 0.4);
+  }
+
+  .pass-container button {
+    background: linear-gradient(45deg, #ff2a5f, #ff7b9c);
+    color: #fff;
+    border: none;
+    padding: 12px 40px;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 10px 20px rgba(255, 42, 95, 0.3);
+  }
+
+  .pass-container button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 25px rgba(255, 42, 95, 0.5);
+  }
+
+  .shake-anim {
+    animation: shakeBox 0.5s ease;
+  }
+
+  @keyframes shakeBox {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    75% { transform: translateX(10px); }
+  }
+
+  /* =========================================
+     MAIN CONTENT
+  ========================================= */
+  #heart-canvas { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
+  
+  main { display: none; position: relative; z-index: 5; opacity: 0; transition: opacity 2s ease; }
+  .unboxed main { display: block; opacity: 1; }
+  
+  section { padding: 8rem 2rem; position: relative; max-width: 1200px; margin: 0 auto; }
+  
+  .section-title {
+    font-family: 'Great Vibes', cursive; font-size: 5.5rem; color: var(--primary-red);
+    text-align: center; margin-bottom: 1rem; text-shadow: 0 5px 15px rgba(255, 182, 193, 0.8);
+  }
+  .section-subtitle {
+    text-align: center; font-family: 'Cormorant Garamond', serif; color: var(--text-dark);
+    font-size: 1.5rem; font-style: italic; margin-bottom: 4rem; font-weight: 600;
+  }
+
+  #hero { height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+  .hero-img-container { position: relative; margin-bottom: 2.5rem; }
+  .hero-img-container::after {
+    content: ''; position: absolute; inset: -20px; border-radius: 50%;
+    border: 3px dashed var(--rose-gold); animation: spin 15s linear infinite;
+  }
+  .hero-img { 
+    width: 250px; height: 250px; border-radius: 50%; object-fit: cover; 
+    border: 8px solid #fff; box-shadow: 0 20px 50px rgba(255, 42, 95, 0.3); 
+    animation: floatHero 6s ease-in-out infinite; position: relative; z-index: 2;
+  }
+  @keyframes floatHero { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+  @keyframes spin { 100% { transform: rotate(360deg); } }
+  
+  .hero-title { font-family: 'Great Vibes', cursive; font-size: clamp(4.5rem, 10vw, 8rem); color: var(--primary-red); text-shadow: 0 5px 15px rgba(255, 255, 255, 1); }
+  .hero-subtitle { letter-spacing: 8px; color: var(--text-dark); font-weight: 600; text-transform: uppercase; margin-top: 20px; font-size: 1rem; background: rgba(255,255,255,0.6); padding: 10px 30px; border-radius: 50px; backdrop-filter: blur(5px); }
+
+  .glass-card {
+    background: var(--glass-bg); backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border); border-radius: 40px; padding: 6rem 4rem;
+    box-shadow: var(--glass-shadow); color: var(--text-dark); transition: 0.5s;
+  }
+  .glass-card:hover { transform: translateY(-10px); }
+
+  .gallery-grid { display: columns; column-count: 3; column-gap: 3rem; max-width: 1200px; margin: 0 auto; padding: 2rem 0; }
+  @media (max-width: 900px) { .gallery-grid { column-count: 2; } }
+  @media (max-width: 600px) { .gallery-grid { column-count: 1; } }
+  .gallery-item {
+    margin-bottom: 3.5rem; break-inside: avoid; background: #fff; padding: 15px 15px 30px 15px; 
+    border-radius: 10px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); transition: 0.5s; cursor: pointer; position: relative;
+  }
+  .gallery-item::before {
+    content: ''; position: absolute; top: -10px; left: 50%; transform: translateX(-50%) rotate(-2deg);
+    width: 60px; height: 20px; background: rgba(255,255,255,0.8); box-shadow: 0 1px 3px rgba(0,0,0,0.1); z-index: 2;
+  }
+  .gallery-item:nth-child(odd) { transform: rotate(-3deg); }
+  .gallery-item:nth-child(even) { transform: rotate(2deg); }
+  .gallery-item:nth-child(3n) { transform: rotate(-1deg); }
+  .gallery-item:hover { transform: rotate(0deg) scale(1.05) translateY(-10px); box-shadow: 0 30px 60px rgba(255, 42, 95, 0.3); z-index: 10; }
+  .gallery-item img { width: 100%; border-radius: 5px; filter: brightness(0.95); transition: 0.5s; }
+  .gallery-item:hover img { filter: brightness(1.05); }
+  .polaroid-caption { font-family: 'Great Vibes', cursive; font-size: 2.2rem; text-align: center; padding-top: 20px; color: var(--primary-red); }
+
+  .timeline { max-width: 900px; margin: 0 auto; position: relative; }
+  .timeline::before { content: ''; position: absolute; left: 50%; width: 4px; height: 100%; background: linear-gradient(to bottom, transparent, var(--neon-pink), transparent); transform: translateX(-50%); border-radius: 50px; }
+  .timeline-item { width: 100%; margin-bottom: 7rem; position: relative; display: flex; justify-content: space-between; align-items: center; }
+  .timeline-item:nth-child(even) { flex-direction: row-reverse; }
+  .timeline-content {
+    width: 43%; background: var(--glass-bg); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+    padding: 2.5rem; border-radius: 30px; border: 2px solid rgba(255,255,255,0.7); box-shadow: var(--glass-shadow); transition: 0.5s; color: var(--text-dark);
+  }
+  .timeline-content:hover { transform: translateY(-10px); box-shadow: 0 25px 50px rgba(255, 42, 95, 0.2); }
+  .timeline-content img { width: 100%; border-radius: 20px; margin-bottom: 1.5rem; box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+  .timeline-dot { 
+    position: absolute; left: 50%; transform: translateX(-50%); width: 30px; height: 30px; background: var(--neon-pink); 
+    border: 6px solid #fff; border-radius: 50%; z-index: 2; box-shadow: 0 0 20px var(--neon-pink);
+  }
+
+  .notes-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 3.5rem; }
+  .note-card {
+    background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(255,255,255,0.6)); backdrop-filter: blur(20px);
+    border: 2px solid #fff; border-radius: 30px; padding: 4rem 3rem; width: 340px; text-align: center;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1); cursor: pointer; transition: 0.5s; overflow: hidden;
+  }
+  .note-card:hover { transform: translateY(-15px); box-shadow: 0 30px 60px rgba(255, 42, 95, 0.2); }
+  .note-icon { font-size: 4rem; color: var(--primary-red); margin-bottom: 1.5rem; transition: 0.5s;}
+  .note-card:hover .note-icon { transform: scale(1.2); }
+  .note-hint { font-size: 1.2rem; letter-spacing: 4px; text-transform: uppercase; color: var(--text-dark); font-weight: bold; }
+  .note-text { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-style: italic; line-height: 1.6; display: none; color: var(--text-dark); font-weight: bold; }
+  .note-card.active .note-text { display: block; animation: smoothFade 0.8s ease; }
+  .note-card.active .note-hint, .note-card.active .note-icon { display: none; }
+  @keyframes smoothFade { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+  #final { text-align: center; padding: 10rem 2rem; }
+  .final-images { display: flex; justify-content: center; align-items: center; gap: -40px; margin-bottom: 4rem; }
+  .final-images img { 
+    width: 160px; height: 160px; border-radius: 50%; object-fit: cover; border: 8px solid #fff; 
+    box-shadow: 0 20px 40px rgba(255, 42, 95, 0.3); margin: 0 -20px; transition: 0.5s;
+  }
+  .final-images img:nth-child(2) { z-index: 2; width: 220px; height: 220px; transform: translateY(-20px); border-color: var(--neon-pink); }
+  .final-images:hover img:nth-child(1) { transform: translateX(-30px) rotate(-10deg); }
+  .final-images:hover img:nth-child(3) { transform: translateX(30px) rotate(10deg); }
+
+  .music-player {
+    position: fixed; bottom: 40px; right: 40px; background: rgba(255,255,255,0.9); backdrop-filter: blur(20px);
+    border: 2px solid #fff; padding: 12px 25px 12px 12px; border-radius: 50px; display: flex; align-items: center; gap: 15px;
+    z-index: 10000; box-shadow: 0 15px 35px rgba(255, 42, 95, 0.2); display: none; transition: 0.3s;
+  }
+  .music-btn {
+    background: linear-gradient(135deg, var(--primary-red), var(--neon-pink)); color: #fff; border: none; width: 50px; height: 50px;
+    border-radius: 50%; cursor: pointer; font-size: 1.4rem; box-shadow: 0 5px 15px rgba(255, 42, 95, 0.4);
+  }
+  .music-info p { font-size: 1rem; font-weight: bold; margin: 0; color: var(--text-dark); }
+  .music-info span { font-size: 0.8rem; color: var(--primary-red); }
+</style>
+</head>
+<body>
+
+<div id="auth-overlay">
+  <div class="stars-bg" id="starsBg"></div>
+
+  <div class="pass-container" id="passUI">
+    <div class="heart-lock-container">
+      <i class="fas fa-heart glowing-heart"></i>
+      <i class="fas fa-lock the-lock" id="lockIcon"></i>
+    </div>
+    <h1>A Gift for My Jaan...</h1>
+    <input type="password" id="passInput" placeholder="Enter our secret code...">
+    <br>
+    <button onclick="unbox()">Unlock My Heart</button>
+  </div>
+</div>
+
+<canvas id="heart-canvas"></canvas>
+
+<div class="music-player" id="musicPlayer">
+  <button class="music-btn" id="playBtn" onclick="togglePlay()">
+    <i class="fas fa-play" style="margin-left: 3px;"></i>
+  </button>
+  <div class="music-info">
+    <p>Our Song</p>
+    <span>Playing softly...</span>
+  </div>
+  <audio id="bgMusic" loop>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+</div>
+
+<main id="mainContent">
+  
+  <section id="hero">
+    <div class="hero-img-container" data-aos="zoom-in" data-aos-duration="2000">
+        <img src="4.jpg" alt="Us" class="hero-img">
+    </div>
+    <h1 class="hero-title" data-aos="fade-up" data-aos-delay="400">My cute little Jaan😇...</h1>
+    <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="600">You are my today tomorrow and my Forever...</p>
+  </section>
+
+  <section id="letter">
+    <div class="glass-card" style="max-width: 900px; margin: 0 auto;" data-aos="fade-up" data-aos-duration="1500">
+        <h2 style="font-family: 'Great Vibes'; font-size: 4.5rem; color: var(--primary-red); margin-bottom: 2.5rem; text-align: center;">My Wifey Jaan 😇 ,</h2>
+        <div style="font-family: 'Cormorant Garamond'; font-size: 1.7rem; line-height: 1.9; text-align: justify;">
+            <p style="margin-bottom: 1.5rem;">Hey love,</p>
+            <p style="margin-bottom: 1.5rem;">I’ve been thinking a lot about us, and I really want to say this properly because you deserve honesty, clarity, and reassurance from me.</p>
+            <p style="margin-bottom: 1.5rem;">We met as complete strangers, never knowing that one day we would become such an important part of each other’s lives. What started as something unknown slowly turned into one of the most beautiful connections in my life. Now, even a single day without talking to you feels empty, and sometimes it honestly feels like suffocation when we are distant emotionally or when we fight. That’s how deeply attached I am to you.</p>
+            <p style="margin-bottom: 1.5rem;">I know I have hurt you many times with my words, my anger, my overthinking, and my negative thoughts. I know there are moments where I react badly, misunderstand things, or make you feel upset when all you ever wanted was love and peace from me. I want you to know that I truly understand my mistakes, and I’m not trying to justify them. What I did was wrong, and I’m genuinely sorry for every moment where my behavior made you cry, overthink, or feel emotionally tired.</p>
+            <p style="margin-bottom: 1.5rem;">The truth is, I love you more than I’m sometimes able to express properly. My intentions with you have always been pure and serious. I don’t talk to you just for time pass or temporary happiness. I see you as someone I want in my future, someone I want to build a peaceful and happy life with. No matter how many misunderstandings happen between us, my feelings for you have never been fake.</p>
+            <p style="margin-bottom: 1.5rem;">Sometimes I become angry very quickly, and honestly, I don’t even fully understand why I react that way. Maybe it’s my fear of losing you, my overthinking, my insecurities, or my habit of thinking negatively before understanding the situation calmly. But I know none of that gives me the right to hurt you. You deserve patience, understanding, reassurance, and love — not pain from the person who claims to love you the most.</p>
+            <p style="margin-bottom: 1.5rem;">Being in a long-distance relationship is already difficult. We don’t have the comfort of meeting each other whenever we want, holding hands during arguments, or seeing each other’s expressions when emotions get intense. Because of distance, even small misunderstandings become bigger than they actually are. Sometimes my overthinking becomes stronger because I miss you so much and because I’m emotionally attached to you in every part of my day. But instead of explaining my feelings calmly, I end up hurting you with my tone or words, and I hate that about myself.</p>
+            <p style="margin-bottom: 1.5rem;">Please believe me when I say this — I never intentionally want to hurt you. If I ever raise my voice, become cold, or react badly, it is never because my love for you is less. In fact, you mean so much to me that my emotions become uncontrollable sometimes. I know love is not just about feelings; it is also about behavior, patience, and emotional maturity. I’m trying to become better because I don’t want my negativity to destroy something so precious to me.</p>
+            <p style="margin-bottom: 1.5rem;">You have brought happiness, comfort, care, and meaning into my life in ways you probably don’t even realize. You stayed with me through my worst moods, my overthinking, my anger, and my flaws. Not everyone has a heart patient enough to do that. I appreciate you more than words can explain.</p>
+            <p style="margin-bottom: 1.5rem;">I just want one chance to improve myself and love you in a healthier way. I want us to fight less, understand each other more, communicate better, and grow stronger together despite the distance. I want our relationship to feel safe, peaceful, and full of trust.</p>
+            <p style="margin-bottom: 1.5rem;">No relationship is perfect, especially long-distance relationships, but my love for you is real. I’m sorry for every tear and every hurt caused by my actions. I promise I will work on my anger, my negativity, and my reactions because losing you is the last thing I would ever want.</p>
+            <p style="margin-bottom: 1.5rem;">I love you deeply, truly, and honestly. And no matter how many mistakes I make, one thing will always remain true — my heart has chosen you completely..</p>
+            <p style="margin-bottom: 1.5rem;">And honestly, no matter how angry, frustrated, or lost I get sometimes, one thing never changes my heart still runs back to you like you’re its favorite place, because life feels incomplete without my pretty girl in it.❤️</p>
+            <p style="font-family: 'Great Vibes'; font-size: 4rem; color: var(--primary-red); margin-top: 4rem; text-align: right;">Endlessly only Yours Jaan😇</p>
+        </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <h2 class="section-title" data-aos="zoom-in-up">Memories Of Ours..</h2>
+    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200"> 2 Bodies 1 Soul</p>
+    
+    <div class="gallery-grid">
+      <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
+        <img src="3.jpg" alt="Memory 1">
+        <div class="polaroid-caption">Happy talks</div>
+      </div>
+      <div class="gallery-item" data-aos="fade-up" data-aos-delay="300">
+        <img src="4.jpg" alt="Memory 2">
+        <div class="polaroid-caption">Life Together</div>
+      </div>
+      <div class="gallery-item" data-aos="fade-up" data-aos-delay="500">
+        <img src="5.jpg" alt="Memory 3">
+        <div class="polaroid-caption">Little moments</div>
+      </div>
+      <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
+        <img src="6.jpg" alt="Memory 4">
+        <div class="polaroid-caption">Just us</div>
+      </div>
+      <div class="gallery-item" data-aos="fade-up" data-aos-delay="400">
+        <img src="7.jpg" alt="Memory 5">
+        <div class="polaroid-caption"> Future Imagination</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="timeline">
+    <h2 class="section-title" data-aos="zoom-in-up">Our Journey</h2>
+    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">Every step led me to you</p>
+
+    <div class="timeline">
+      <div class="timeline-item" data-aos="fade-right" data-aos-duration="1200">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <img src="8.webp" alt="First Meet">
+          <h3 style="font-family: 'Great Vibes'; font-size: 3rem; color: var(--primary-red); margin-bottom: 15px;">How We First Met</h3>
+          <p style="font-family: 'Cormorant Garamond'; font-size: 1.4rem; font-style: italic;">We met as complete strangers on Instagram without knowing that one day we would become such an important part of each other’s lives. It started with simple conversations, random replies, and small talks, but slowly those conversations became longer and more meaningful. What was once just two unknown people talking online slowly turned into a beautiful connection that neither of us expected. </p>
+        </div>
+      </div>
+      <div class="timeline-item" data-aos="fade-left" data-aos-duration="1200">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <img src="9.jpg" alt="Flowers">
+          <h3 style="font-family: 'Great Vibes'; font-size: 3rem; color: var(--primary-red); margin-bottom: 15px;">From Friends to Something More</h3>
+          <p style="font-family: 'Cormorant Garamond'; font-size: 1.4rem; font-style: italic; margin-bottom: 1rem;">As days passed, we started sharing everything with each other like best friends. We talked for hours about random things, our feelings, our daily lives, our happiness, and even our problems. You became a part of my routine without me even realizing it. Every notification from you made my day better, and every conversation with you brought me peace.</p>
+          <p style="font-family: 'Cormorant Garamond'; font-size: 1.4rem; font-style: italic;">But then, when I saw you talking with other people, I started feeling jealous. That jealousy made me realize something important — you were no longer just a friend to me. I had already become emotionally attached to you, and the thought of losing your attention or importance in your life hurt me more than I expected. That’s when I understood my feelings were real.</p>
+        </div>
+      </div>
+      <div class="timeline-item" data-aos="fade-right" data-aos-duration="1200">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <img src="10.jpg" alt="Cozy">
+          <h3 style="font-family: 'Great Vibes'; font-size: 3rem; color: var(--primary-red); margin-bottom: 15px;">The Day I Proposed You</h3>
+          <p style="font-family: 'Cormorant Garamond'; font-size: 1.4rem; font-style: italic; margin-bottom: 1rem;">Because of those feelings, I finally gathered the courage to tell you what was in my heart. I proposed to you, not just because I liked you, but because I genuinely wanted you in my life in a special way. And when you accepted my proposal, it became one of the happiest moments of my life.</p>
+          <p style="font-family: 'Cormorant Garamond'; font-size: 1.4rem; font-style: italic;">From that day, our relationship started growing stronger. We created countless memories together, shared laughter, emotional moments, late-night talks, care, love, and support. Even though we were in a long-distance relationship, our bond became deeper day by day.</p>
+        </div>
+      </div>
+      <div class="timeline-item" data-aos="fade-left" data-aos-duration="1200">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <img src="11.jpg" alt="Future">
+          <h3 style="font-family: 'Great Vibes'; font-size: 3rem; color: var(--primary-red); margin-bottom: 15px;">Our Journey Together</h3>
+          <p style="font-family: 'Cormorant Garamond'; font-size: 1.4rem; font-style: italic; margin-bottom: 1rem;">Our relationship was never perfect, but it was always real. We experienced happiness, sadness, misunderstandings, fights, tears, anger, and emotional moments — just like every true relationship does. Sometimes we hurt each other unintentionally, sometimes we overthought, and sometimes distance made things harder for us.</p>
+          <p style="font-family: 'Cormorant Garamond'; font-size: 1.4rem; font-style: italic; margin-bottom: 1rem;">But despite everything, one thing always remained the same — we never gave up on each other. No matter how many fights we had or how difficult situations became, deep inside we both knew that our love was stronger than our problems. We always found our way back to each other because what we have is not temporary.</p>
+          <p style="font-family: 'Cormorant Garamond'; font-size: 1.4rem; font-style: italic;">Our story started with two strangers on Instagram, but today it feels like destiny brought us together for a reason. And no matter how hard life gets, I know one thing for sure — I never want to lose you, because you have become one of the most precious parts of my life. ❤️</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="notes">
+    <h2 class="section-title" data-aos="zoom-in-up">Secret Love Notes</h2>
+    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">Tap to reveal my heart</p>
+
+    <div class="notes-container">
+      <div class="note-card" onclick="this.classList.toggle('active')" data-aos="zoom-in-up" data-aos-delay="100">
+        <i class="fas fa-heart note-icon"></i>
+        <p class="note-hint">Note #1</p>
+        <p class="note-text">If peace ever had a face, I think it would look a little like you smiling during our late-night conversations.</p>
+      </div>
+      <div class="note-card" onclick="this.classList.toggle('active')" data-aos="zoom-in-up" data-aos-delay="300">
+        <i class="fas fa-star note-icon"></i>
+        <p class="note-hint">Note #2</p>
+        <p class="note-text">The distance between us feels cruel sometimes, yet even oceans cannot teach my heart how to stay away from you.</p>
+      </div>
+      <div class="note-card" onclick="this.classList.toggle('active')" data-aos="zoom-in-up" data-aos-delay="500">
+        <i class="fas fa-moon note-icon"></i>
+        <p class="note-hint">Note #3</p>
+        <p class="note-text">Every time you smile, it feels like flowers are learning how to bloom for the very first time</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="final">
+    <div class="final-images" data-aos="fade-up" data-aos-duration="1500">
+      <img src="12.jpg" alt="Us">
+      <img src="7.jpg" alt="Us">
+      <img src="14.jpg" alt="Us">
+    </div>
+    <h1 style="font-family: 'Great Vibes'; font-size: clamp(5rem, 12vw, 8rem); color: var(--primary-red); text-shadow: 0 10px 30px rgba(255, 182, 193, 0.8);" data-aos="zoom-in">I Love You Jaan😇</h1>
+    <div style="letter-spacing: 4px; opacity: 0.9; margin-top: 3rem; text-transform: uppercase; font-size: 1.05rem; font-weight: 700; line-height: 2; background: rgba(255,255,255,0.7); padding: 3rem; border-radius: 20px; backdrop-filter: blur(15px); box-shadow: 0 10px 30px rgba(0,0,0,0.05);" data-aos="fade-up" data-aos-delay="300">
+      <p style="margin-bottom: 1.5rem;">You came into my life unexpectedly, but now I cannot imagine my future without you in it. From strangers on Instagram to becoming each other’s safe place, we have already crossed so many emotions together — love, distance, fights, tears, laughter, and countless memories. And through every phase, one thing always stayed constant: my heart kept choosing you.</p>
+      <p>I don’t want this love to remain just a beautiful chapter; I want it to become my whole story. I want to wake up beside you one day, grow old with you, protect your heart, and build a life where no distance can separate us anymore. So today, with all the love I carry for you, I just want to ask… will you be my forever, my home, and the woman I spend my entire life loving? ❤️</p>
+    </div>
+  </section>
+
+</main>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+// Make absolutely sure the page is loaded before running scripts
+document.addEventListener("DOMContentLoaded", function() {
+
+  // --- DRAW STARS BACKGROUND ---
+  const starsContainer = document.getElementById('starsBg');
+  if (starsContainer) {
+    let starsHTML = '';
+    for(let i=0; i<100; i++) {
+      const x = Math.random() * 100;
+      const y = Math.random() * 100;
+      const size = Math.random() * 3 + 1;
+      starsHTML += `<div style="position:absolute; left:${x}%; top:${y}%; width:${size}px; height:${size}px; background:#fff; border-radius:50%; box-shadow:0 0 5px #fff; opacity: ${Math.random()};"></div>`;
+    }
+    starsContainer.innerHTML = starsHTML;
+  }
+
+  // --- FLOATING HEARTS ANIMATION (SAFE VERSION) ---
+  const canvas = document.getElementById('heart-canvas');
+  if (canvas) {
+    const ctx = canvas.getContext('2d');
+    let hearts = [];
+
+    function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+    window.addEventListener('resize', resize); resize();
+
+    function createHearts() {
+      for (let i = 0; i < 30; i++) {
+        hearts.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height + canvas.height,
+          size: Math.random() * 15 + 10,
+          speed: Math.random() * 2 + 1,
+          opacity: Math.random() * 0.5 + 0.1,
+          color: Math.random() > 0.5 ? '#ff2a5f' : '#ffb6c1'
+        });
+      }
+    }
+    createHearts();
+
+    function drawHearts() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      if (document.body.classList.contains('unboxed')) {
+        for (let i = 0; i < hearts.length; i++) {
+          let h = hearts[i];
+          h.y -= h.speed;
+          if (h.y < -50) h.y = canvas.height + 50;
+
+          ctx.globalAlpha = h.opacity;
+          ctx.fillStyle = h.color;
+          ctx.font = h.size + "px Arial";
+          ctx.fillText("❤", h.x, h.y);
+        }
+      }
+      requestAnimationFrame(drawHearts);
+    }
+    drawHearts();
+  }
+});
+
+// --- UNLOCK FUNCTION ---
+window.unbox = function() {
+  const pass = document.getElementById('passInput').value;
+  const ui = document.getElementById('passUI');
+  const lock = document.getElementById('lockIcon');
+
+  if(pass === "Jaan@2003") {
+    // Unlock animation
+    if(lock) {
+      lock.classList.remove('fa-lock');
+      lock.classList.add('fa-lock-open');
+      lock.style.color = 'var(--neon-pink)';
+    }
+
+    ui.style.transform = "scale(1.1)";
+    ui.style.opacity = "0";
+    
+    setTimeout(() => {
+      document.getElementById('auth-overlay').style.opacity = "0";
+      document.body.classList.add('unboxed');
+      document.getElementById('musicPlayer').style.display = 'flex';
+      
+      togglePlay();
+      
+      setTimeout(() => {
+        document.getElementById('auth-overlay').style.display = "none";
+        // Initialize Scroll Animations safely
+        if(typeof AOS !== 'undefined') {
+          AOS.init({ once: true, offset: 100, duration: 1000 });
+        }
+      }, 1500);
+    }, 800);
+  } else {
+    // Shake effect on wrong password
+    ui.classList.remove('shake-anim');
+    void ui.offsetWidth; // trigger refresh safely
+    ui.classList.add('shake-anim');
+  }
+}
+
+// --- MUSIC TOGGLE ---
+let isPlaying = false;
+window.togglePlay = function() {
+  const audio = document.getElementById('bgMusic');
+  const icon = document.querySelector('#playBtn i');
+  
+  if(!audio || !icon) return;
+
+  if (isPlaying) {
+    audio.pause();
+    icon.classList.remove('fa-pause');
+    icon.classList.add('fa-play');
+  } else {
+    audio.play().catch(e => console.log("Audio play blocked by browser"));
+    icon.classList.remove('fa-play');
+    icon.classList.add('fa-pause');
+  }
+  isPlaying = !isPlaying;
+}
+
+// --- CURSOR SPARKLES ---
+document.addEventListener('mousemove', function(e) {
+  if(!document.body.classList.contains('unboxed')) return; 
+  if(Math.random() > 0.8) return; 
+  
+  const sparkle = document.createElement('div');
+  sparkle.innerHTML = '❤';
+  sparkle.style.position = 'fixed';
+  sparkle.style.left = e.pageX + 'px';
+  sparkle.style.top = e.pageY + 'px';
+  sparkle.style.color = Math.random() > 0.5 ? '#ff2a5f' : '#ffffff';
+  sparkle.style.fontSize = (Math.random() * 10 + 10) + 'px';
+  sparkle.style.pointerEvents = 'none';
+  sparkle.style.zIndex = '999999';
+  sparkle.style.textShadow = '0 0 10px rgba(255,255,255,0.8)';
+  sparkle.style.transition = 'all 1s ease';
+  
+  document.body.appendChild(sparkle);
+  
+  setTimeout(() => {
+    sparkle.style.transform = 'translateY(-20px) scale(1.5)';
+    sparkle.style.opacity = '0';
+  }, 10);
+  
+  setTimeout(() => { sparkle.remove(); }, 1000);
+});
+</script>
+</body>
+</html>
