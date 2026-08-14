@@ -564,16 +564,17 @@
 
   <script src="script.js"></script>
   <script>
-  fetch("/api/visit", {
-    method: "POST"
-  })
-  .then(response => response.json())
-  .then(data => {
-    console.log("Visit recorded:", data);
-  })
-  .catch(error => {
-    console.error("Visit tracking error:", error);
-  });
+fetch("/api/visit", {
+  method: "POST"
+})
+.then(response => response.json())
+.then(data => {
+  console.log("Visit result:", data);
+})
+.catch(error => {
+  console.error("Visit error:", error);
+});
 </script>
+
 </body>
 </html>
